@@ -130,7 +130,6 @@ func (d *Dialer) tlsConfig() *tls.Config {
 	if d.TLSConfig == nil {
 		return &tls.Config{ServerName: d.Host}
 	}
-	fmt.Printf("tlsConfig: %+v\n", d.TLSConfig)
 	return d.TLSConfig
 }
 
