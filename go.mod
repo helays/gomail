@@ -1,6 +1,5 @@
 module github.com/helays/gomail/v2
 
-go 1.25
 
 require (
 	golang.org/x/net v0.44.0
