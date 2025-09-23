@@ -92,7 +92,7 @@ func (d *Dialer) Dial() (SendCloser, error) {
 
 	if !d.SSL {
 		if ok, _ := c.Extension("STARTTLS"); ok {
-			if err := c.StartTLS(d.tlsConfig()); err != nil {
+			if err = c.StartTLS(d.tlsConfig()); err != nil {
 				c.Close()
 				return nil, err
 			}
@@ -130,6 +130,7 @@ func (d *Dialer) tlsConfig() *tls.Config {
 	if d.TLSConfig == nil {
 		return &tls.Config{ServerName: d.Host}
 	}
+	fmt.Printf("tlsConfig: %+v\n", d.TLSConfig)
 	return d.TLSConfig
 }
 
